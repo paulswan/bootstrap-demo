@@ -1,3 +1,7 @@
 /* Add application styles & imports to this file! */
+@import './assets/scss/typography.scss';
+@import './assets/scss/variables.scss';
+@import './assets/scss/theme.scss';
+
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';

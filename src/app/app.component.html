@@ -14,3 +14,70 @@
   <button type="button" class="btn btn-dark">Dark</button>
   <button type="button" class="btn btn-link">Link</button>
 </div>
+
+<br>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <h3>Tint/Shade</h3>
+    </div>
+    <div class="col">
+      <h3>Lighten/Darken</h3>
+    </div>
+    <div class="col">
+      <h3>MDB</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col p-3">
+      <ng-container *ngFor="let hue of [100, 200, 300, 400, 500, 600, 700, 800, 900]">
+        <div class="cocoon-purple-{{hue}}">purple-{{hue}}</div>
+      </ng-container>
+    </div>
+    <div class="col p-3">
+      <ng-container *ngFor="let hue of [100, 200, 300, 400, 500, 600, 700, 800, 900]">
+        <div class="lighten-purple-{{hue}}">purple-{{hue}}</div>
+      </ng-container>
+    </div>
+    <div class="col p-3">
+      <ng-container *ngFor="let hue of [100, 200, 300, 400, 500, 600, 700, 800, 900]">
+        <div class="mdb-purple-{{hue}}">purple-{{hue}}</div>
+      </ng-container>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col p-3">
+      <ng-container *ngFor="let hue of [100, 200, 300, 400, 500, 600, 700, 800, 900]">
+        <div class="cocoon-green-{{hue}}">green-{{hue}}</div>
+      </ng-container>
+    </div>
+    <div class="col p-3">
+      <ng-container *ngFor="let hue of [100, 200, 300, 400, 500, 600, 700, 800, 900]">
+        <div class="darken-green-{{hue}}">green-{{hue}}</div>
+      </ng-container>
+    </div>
+    <div class="col p-3">
+      <ng-container *ngFor="let hue of [100, 200, 300, 400, 500, 600, 700, 800, 900]">
+        <div class="mdb-green-{{hue}}">green-{{hue}}</div>
+      </ng-container>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col p-3">
+      <ng-container *ngFor="let hue of [100, 200, 300, 400, 500, 600, 700, 800, 900]">
+        <div class="cocoon-yellow-{{hue}}">yellow-{{hue}}</div>
+      </ng-container>
+    </div>
+    <div class="col p-3">
+      <ng-container *ngFor="let hue of [100, 200, 300, 400, 500, 600, 700, 800, 900]">
+        <div class="darken-yellow-{{hue}}">yellow-{{hue}}</div>
+      </ng-container>
+    </div>
+    <div class="col p-3">
+      <ng-container *ngFor="let hue of [100, 200, 300, 400, 500, 600, 700, 800, 900]">
+        <div class="mdb-yellow-{{hue}}">yellow-{{hue}}</div>
+      </ng-container>
+    </div>
+  </div>
+</div>

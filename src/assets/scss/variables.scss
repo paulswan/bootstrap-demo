@@ -1,0 +1,164 @@
+@use 'sass:map';
+
+@import '~bootstrap/scss/_functions';
+@import '~bootstrap/scss/_variables';
+
+$cocoondata-purple: #2e0161;
+$cocoondata-green: #caffba;
+$cocoondata-yellow: #fffb82;
+
+$white: #fff;
+$black: #000;
+$color-contrast-dark: $black;
+$color-contrast-light: $white;
+$min-contrast-ratio: 4.5;
+
+@mixin get-palette-colors($hue, $palette) {
+  background-color: map.get($palette, $hue);
+  color: color-contrast(map.get($palette, $hue));
+}
+
+@mixin get-palette-classes($name, $palette) {
+  $hues: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+
+  @each $hue in $hues {
+    .#{$name}-#{$hue} {
+      @include get-palette-colors($hue, $palette);
+    }
+  }
+}
+
+$cocoon-purple: (
+  100: tint-color($cocoondata-purple, 80%),
+  200: tint-color($cocoondata-purple, 70%),
+  300: tint-color($cocoondata-purple, 60%),
+  400: tint-color($cocoondata-purple, 50%),
+  500: tint-color($cocoondata-purple, 40%),
+  600: tint-color($cocoondata-purple, 30%),
+  700: tint-color($cocoondata-purple, 20%),
+  800: tint-color($cocoondata-purple, 10%),
+  900: $cocoondata-purple,
+);
+
+$cocoon-green: (
+  100: tint-color($cocoondata-green, 50%),
+  200: $cocoondata-green,
+  300: shade-color($cocoondata-green, 10%),
+  400: shade-color($cocoondata-green, 20%),
+  500: shade-color($cocoondata-green, 30%),
+  600: shade-color($cocoondata-green, 40%),
+  700: shade-color($cocoondata-green, 50%),
+  800: shade-color($cocoondata-green, 60%),
+  900: shade-color($cocoondata-green, 70%),
+);
+
+$cocoon-yellow: (
+  100: tint-color($cocoondata-yellow, 50%),
+  200: $cocoondata-yellow,
+  300: shade-color($cocoondata-yellow, 10%),
+  400: shade-color($cocoondata-yellow, 20%),
+  500: shade-color($cocoondata-yellow, 30%),
+  600: shade-color($cocoondata-yellow, 40%),
+  700: shade-color($cocoondata-yellow, 50%),
+  800: shade-color($cocoondata-yellow, 60%),
+  900: shade-color($cocoondata-yellow, 70%),
+);
+
+@include get-palette-classes('cocoon-purple', $cocoon-purple);
+@include get-palette-classes('cocoon-green', $cocoon-green);
+@include get-palette-classes('cocoon-yellow', $cocoon-yellow);
+
+$lighten-purple: (
+  100: lighten($cocoondata-purple, 70%),
+  200: lighten($cocoondata-purple, 60%),
+  300: lighten($cocoondata-purple, 50%),
+  400: lighten($cocoondata-purple, 40%),
+  500: lighten($cocoondata-purple, 30%),
+  600: lighten($cocoondata-purple, 20%),
+  700: lighten($cocoondata-purple, 10%),
+  800: $cocoondata-purple,
+  900: darken($cocoondata-purple, 10%),
+);
+
+$darken-green: (
+  100: lighten($cocoondata-green, 10%),
+  200: $cocoondata-green,
+  300: darken($cocoondata-green, 10%),
+  400: darken($cocoondata-green, 20%),
+  500: darken($cocoondata-green, 30%),
+  600: darken($cocoondata-green, 40%),
+  700: darken($cocoondata-green, 50%),
+  800: darken($cocoondata-green, 60%),
+  900: darken($cocoondata-green, 70%),
+);
+
+$darken-yellow: (
+  100: lighten($cocoondata-yellow, 10%),
+  200: $cocoondata-yellow,
+  300: darken($cocoondata-yellow, 10%),
+  400: darken($cocoondata-yellow, 20%),
+  500: darken($cocoondata-yellow, 30%),
+  600: darken($cocoondata-yellow, 40%),
+  700: darken($cocoondata-yellow, 50%),
+  800: darken($cocoondata-yellow, 60%),
+  900: darken($cocoondata-yellow, 70%),
+);
+
+@include get-palette-classes('lighten-purple', $lighten-purple);
+@include get-palette-classes('darken-green', $darken-green);
+@include get-palette-classes('darken-yellow', $darken-yellow);
+
+$mdb-purple: (
+  100: #dabafe,
+  200: #c08afe,
+  300: #a659fd,
+  400: #8c29fd,
+  500: #7202f2,
+  600: #5c02c2,
+  700: #450191,
+  800: $cocoondata-purple,
+  900: #170030,
+);
+
+$mdb-green: (
+  100: #f4fff1,
+  200: $cocoondata-green,
+  300: #a0ff83,
+  400: #75ff4b,
+  500: #4bff14,
+  600: #33dc00,
+  700: #27a500,
+  800: #1a6e00,
+  900: #0d3700,
+);
+
+$mdb-yellow: (
+  100: #fffcb0,
+  200: $cocoondata-yellow,
+  300: #fff951,
+  400: #fff821,
+  500: #f0e800,
+  600: #c0b900,
+  700: #908b00,
+  800: #605d00,
+  900: #302e00,
+);
+@include get-palette-classes('mdb-purple', $mdb-purple);
+@include get-palette-classes('mdb-green', $mdb-green);
+@include get-palette-classes('mdb-yellow', $mdb-yellow);
+
+// $primary: $cocoondata-purple;
+// $primary: map.get($cocoon-purple, 500);
+$primary: map.get($lighten-purple, 500);
+// $warning: map.get($darken-yellow, 400);
+
+$theme-colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'success': $success,
+  'info': $info,
+  'warning': $warning,
+  'danger': $danger,
+  'light': $light,
+  'dark': $dark,
+);
