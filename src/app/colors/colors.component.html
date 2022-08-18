@@ -1,3 +1,58 @@
 <h1>Colour Palette</h1>
 
-<h3>Cocoon Data color palettes</h3>
+<!-- <h3>Cocoon Data color palettes</h3> -->
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <h4>Tint/Shade</h4>
+    </div>
+    <div class="col">
+      <h4>Lighten/Darken</h4>
+    </div>
+    <div class="col">
+      <h4>Material Design 2</h4>
+    </div>
+    <div class="col">
+      <h4>Material Design 3</h4>
+    </div>
+  </div>
+
+  <ng-container *ngFor="let color of ['purple', 'green', 'yellow']">
+    <div class="row">
+      <div class="col p-3">
+        <ng-container *ngFor="let hue of [100, 200, 300, 400, 500, 600, 700, 800, 900]">
+          <div class="tint-shade-{{color}}-{{hue}}">
+            <span>{{color}}-{{hue}}</span>
+            <span *ngIf="tintShadeColors.includes('tint-shade-'+color+'-'+hue)">&nbsp;*</span>
+          </div>
+        </ng-container>
+      </div>
+      <div class="col p-3">
+        <ng-container *ngFor="let hue of [100, 200, 300, 400, 500, 600, 700, 800, 900]">
+          <div class="lighten-darken-{{color}}-{{hue}}">
+            <span>{{color}}-{{hue}}</span>
+            <span *ngIf="lightenDarkenColors.includes('lighten-darken-'+color+'-'+hue)">&nbsp;*</span>
+          </div>
+        </ng-container>
+      </div>
+      <div class="col p-3">
+        <ng-container *ngFor="let hue of [100, 200, 300, 400, 500, 600, 700, 800, 900]">
+          <div class="md2-{{color}}-{{hue}}">
+            <span>{{color}}-{{hue}}</span>
+            <span *ngIf="angularMaterialColors.includes('md2-'+color+'-'+hue)">&nbsp;*</span>
+          </div>
+        </ng-container>
+      </div>
+
+      <div class="col p-3">
+        <ng-container *ngFor="let hue of [100, 200, 300, 400, 500, 600, 700, 800, 900]">
+          <div class="md3-{{color}}-{{hue}}">
+            <span>{{color}}-{{hue}}</span>
+            <!-- <span *ngIf="angularMaterialColors.includes('md3-'+color+'-'+hue)">&nbsp;*</span> -->
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </ng-container>
+</div>

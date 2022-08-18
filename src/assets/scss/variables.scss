@@ -28,7 +28,7 @@ $min-contrast-ratio: 4.5;
   }
 }
 
-$cocoon-purple: (
+$tint-shade-purple: (
   100: tint-color($cocoondata-purple, 80%),
   200: tint-color($cocoondata-purple, 70%),
   300: tint-color($cocoondata-purple, 60%),
@@ -40,7 +40,7 @@ $cocoon-purple: (
   900: $cocoondata-purple,
 );
 
-$cocoon-green: (
+$tint-shade-green: (
   100: tint-color($cocoondata-green, 50%),
   200: $cocoondata-green,
   300: shade-color($cocoondata-green, 10%),
@@ -52,7 +52,7 @@ $cocoon-green: (
   900: shade-color($cocoondata-green, 70%),
 );
 
-$cocoon-yellow: (
+$tint-shade-yellow: (
   100: tint-color($cocoondata-yellow, 50%),
   200: $cocoondata-yellow,
   300: shade-color($cocoondata-yellow, 10%),
@@ -64,11 +64,11 @@ $cocoon-yellow: (
   900: shade-color($cocoondata-yellow, 70%),
 );
 
-@include get-palette-classes('cocoon-purple', $cocoon-purple);
-@include get-palette-classes('cocoon-green', $cocoon-green);
-@include get-palette-classes('cocoon-yellow', $cocoon-yellow);
+@include get-palette-classes('tint-shade-purple', $tint-shade-purple);
+@include get-palette-classes('tint-shade-green', $tint-shade-green);
+@include get-palette-classes('tint-shade-yellow', $tint-shade-yellow);
 
-$lighten-purple: (
+$lighten-darken-purple: (
   100: lighten($cocoondata-purple, 70%),
   200: lighten($cocoondata-purple, 60%),
   300: lighten($cocoondata-purple, 50%),
@@ -80,7 +80,7 @@ $lighten-purple: (
   900: darken($cocoondata-purple, 10%),
 );
 
-$darken-green: (
+$lighten-darken-green: (
   100: lighten($cocoondata-green, 10%),
   200: $cocoondata-green,
   300: darken($cocoondata-green, 10%),
@@ -92,7 +92,7 @@ $darken-green: (
   900: darken($cocoondata-green, 70%),
 );
 
-$darken-yellow: (
+$lighten-darken-yellow: (
   100: lighten($cocoondata-yellow, 10%),
   200: $cocoondata-yellow,
   300: darken($cocoondata-yellow, 10%),
@@ -104,53 +104,104 @@ $darken-yellow: (
   900: darken($cocoondata-yellow, 70%),
 );
 
-@include get-palette-classes('lighten-purple', $lighten-purple);
-@include get-palette-classes('darken-green', $darken-green);
-@include get-palette-classes('darken-yellow', $darken-yellow);
+@include get-palette-classes('lighten-darken-purple', $lighten-darken-purple);
+@include get-palette-classes('lighten-darken-green', $lighten-darken-green);
+@include get-palette-classes('lighten-darken-yellow', $lighten-darken-yellow);
 
-$mdb-purple: (
-  100: #dabafe,
-  200: #c08afe,
-  300: #a659fd,
-  400: #8c29fd,
-  500: #7202f2,
-  600: #5c02c2,
-  700: #450191,
-  800: $cocoondata-purple,
-  900: #170030,
+$md2-purple: (
+  100: #d5b5d9,
+  200: #b985c1,
+  300: #9e56a8,
+  400: #8a3497,
+  500: #770d86,
+  600: #6b0b81,
+  700: #5a0779,
+  800: #4b0471,
+  900: $cocoondata-purple,
 );
 
-$mdb-green: (
-  100: #f4fff1,
+$md2-green: (
+  50: #f2ffee,
+  100: #dfffd5,
   200: $cocoondata-green,
-  300: #a0ff83,
-  400: #75ff4b,
-  500: #4bff14,
-  600: #33dc00,
-  700: #27a500,
-  800: #1a6e00,
-  900: #0d3700,
+  300: #b5fe9e,
+  400: #9cfa83,
+  500: #93f775,
+  600: #83e56b,
+  700: #6ece5f,
+  800: #5ab955,
+  900: #359543,
 );
 
-$mdb-yellow: (
-  100: #fffcb0,
-  200: $cocoondata-yellow,
-  300: #fff951,
-  400: #fff821,
-  500: #f0e800,
-  600: #c0b900,
-  700: #908b00,
-  800: #605d00,
-  900: #302e00,
+$md2-yellow: (
+  50: #ffffe9,
+  100: #fcfbc7,
+  200: #faf8a1,
+  300: $cocoondata-yellow,
+  400: #fcf664,
+  500: #f9f147,
+  600: #fee546,
+  700: #fccd3b,
+  800: #fbb531,
+  900: #f88d1e,
 );
-@include get-palette-classes('mdb-purple', $mdb-purple);
-@include get-palette-classes('mdb-green', $mdb-green);
-@include get-palette-classes('mdb-yellow', $mdb-yellow);
+@include get-palette-classes('md2-purple', $md2-purple);
+@include get-palette-classes('md2-green', $md2-green);
+@include get-palette-classes('md2-yellow', $md2-yellow);
 
-// $primary: $cocoondata-purple;
+$md3-purple: (
+  100: #ecdcff,
+  200: #d6baff,
+  300: #bf9af7,
+  400: #a37fda,
+  500: #8966be,
+  600: #6f4ca3,
+  700: #563489,
+  800: #3f1a71,
+  900: #280056,
+);
+$md3-green: (
+  100: #aff49e,
+  200: #94d785,
+  300: #7abb6c,
+  400: #60a054,
+  500: #47853d,
+  600: #2e6b27,
+  700: #135210,
+  800: #003a02,
+  900: #002201,
+);
+$md3-yellow: (
+  100: #ebe86e,
+  200: #cfcb55,
+  300: #b3b03c,
+  400: #989522,
+  500: #7d7b00,
+  600: #636100,
+  700: #4b4900,
+  800: #333200,
+  900: #1d1d00,
+);
+@include get-palette-classes('md3-purple', $md3-purple);
+@include get-palette-classes('md3-green', $md3-green);
+@include get-palette-classes('md3-yellow', $md3-yellow);
+
+// $cocoondata-purple: #2e0161;
+// $cocoondata-green: #caffba;
+// $cocoondata-yellow: #fffb82;
+
+$primary: $cocoondata-purple;
+$secondary: $cocoondata-green;
+// $success: $cocoondata-green;
+$warning: $cocoondata-yellow;
+
 // $primary: map.get($cocoon-purple, 500);
-$primary: map.get($lighten-purple, 500);
-// $warning: map.get($darken-yellow, 400);
+// $success: map.get($cocoon-green, 300);
+// $warning: map.get($cocoon-yellow, 400);
+
+// $primary: map.get($lighten-darken-purple, 500);
+// $success: map.get($lighten-darken-green, 500);
+// $warning: map.get($lighten-darken-yellow, 500);
 
 $theme-colors: (
   'primary': $primary,

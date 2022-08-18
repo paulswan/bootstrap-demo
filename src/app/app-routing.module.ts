@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { HomeComponent } from './home/home.component';
 import { ColorsComponent } from './colors/colors.component';
+import { ButtonsComponent } from './buttons/buttons.component';
 // import { AddressFormComponent } from './address-form/address-form.component';
-// import { ButtonsComponent } from './buttons/buttons.component';
 // import { CardsComponent } from './cards/cards.component';
 // import { CheckboxRadioComponent } from './checkbox-radio/checkbox-radio.component';
 // import { DashboardComponent } from './dashboard/dashboard.component';
 // import { DragDropComponent } from './drag-drop/drag-drop.component';
-// import { HomeComponent } from './home/home.component';
 // import { InputsComponent } from './inputs/inputs.component';
 // import { OtherComponent } from './other/other.component';
 // import { ProgressComponent } from './progress/progress.component';
@@ -20,22 +20,22 @@ import { ColorsComponent } from './colors/colors.component';
 
 const routes: Routes = [
   {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'home',
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
+  },
+  {
     path: 'colors',
     component: ColorsComponent,
   },
-  // {
-  //   path: '',
-  //   pathMatch: 'full',
-  //   redirectTo: 'home',
-  // },
-  // {
-  //   path: 'home',
-  //   component: HomeComponent,
-  // },
-  // {
-  //   path: 'buttons',
-  //   component: ButtonsComponent,
-  // },
+  {
+    path: 'buttons',
+    component: ButtonsComponent,
+  },
   // {
   //   path: 'typography',
   //   component: TypographyComponent,
