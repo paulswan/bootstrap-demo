@@ -18,7 +18,7 @@
     </div>
   </div>
 
-  <ng-container *ngFor="let color of ['purple', 'green', 'yellow']">
+  <ng-container *ngFor="let color of ['purple', 'green', 'yellow', 'grey']">
     <div class="row">
       <div class="col p-3">
         <ng-container *ngFor="let hue of [100, 200, 300, 400, 500, 600, 700, 800, 900]">
@@ -44,7 +44,6 @@
           </div>
         </ng-container>
       </div>
-
       <div class="col p-3">
         <ng-container *ngFor="let hue of [100, 200, 300, 400, 500, 600, 700, 800, 900]">
           <div class="md3-{{ color }}-{{ hue }}">

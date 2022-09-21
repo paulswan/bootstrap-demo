@@ -6,6 +6,7 @@
 $cocoondata-purple: #2e0161;
 $cocoondata-green: #caffba;
 $cocoondata-yellow: #fffb82;
+$cocoondata-grey: #404040;
 
 $white: #fff;
 $black: #000;
@@ -64,9 +65,22 @@ $tint-shade-yellow: (
   900: shade-color($cocoondata-yellow, 70%),
 );
 
+$tint-shade-grey: (
+  100: tint-color($cocoondata-grey, 87.5%),
+  200: tint-color($cocoondata-grey, 75%),
+  300: tint-color($cocoondata-grey, 62.5%),
+  400: tint-color($cocoondata-grey, 50%),
+  500: tint-color($cocoondata-grey, 37.5%),
+  600: tint-color($cocoondata-grey, 25%),
+  700: tint-color($cocoondata-grey, 12.5%),
+  800: $cocoondata-grey,
+  900: shade-color($cocoondata-grey, 40%),
+);
+
 @include get-palette-classes('tint-shade-purple', $tint-shade-purple);
 @include get-palette-classes('tint-shade-green', $tint-shade-green);
 @include get-palette-classes('tint-shade-yellow', $tint-shade-yellow);
+@include get-palette-classes('tint-shade-grey', $tint-shade-grey);
 
 $lighten-darken-purple: (
   100: lighten($cocoondata-purple, 70%),
@@ -104,9 +118,22 @@ $lighten-darken-yellow: (
   900: darken($cocoondata-yellow, 70%),
 );
 
+$lighten-darken-grey: (
+  100: lighten($cocoondata-grey, 70%),
+  200: lighten($cocoondata-grey, 60%),
+  300: lighten($cocoondata-grey, 50%),
+  400: lighten($cocoondata-grey, 40%),
+  500: lighten($cocoondata-grey, 30%),
+  600: lighten($cocoondata-grey, 20%),
+  700: lighten($cocoondata-grey, 10%),
+  800: $cocoondata-grey,
+  900: darken($cocoondata-grey, 10%),
+);
+
 @include get-palette-classes('lighten-darken-purple', $lighten-darken-purple);
 @include get-palette-classes('lighten-darken-green', $lighten-darken-green);
 @include get-palette-classes('lighten-darken-yellow', $lighten-darken-yellow);
+@include get-palette-classes('lighten-darken-grey', $lighten-darken-grey);
 
 $md2-purple: (
   100: #d5b5d9,
@@ -145,9 +172,23 @@ $md2-yellow: (
   800: #fbb531,
   900: #f88d1e,
 );
+
+$md2-grey: (
+  100: #fafafa,
+  200: #ededed,
+  300: #dedede,
+  400: #bbbbbb,
+  500: #9c9c9c,
+  600: #737373,
+  700: #5f5f5f,
+  800: $cocoondata-grey,
+  900: #1f1f1f,
+);
+
 @include get-palette-classes('md2-purple', $md2-purple);
 @include get-palette-classes('md2-green', $md2-green);
 @include get-palette-classes('md2-yellow', $md2-yellow);
+@include get-palette-classes('md2-grey', $md2-grey);
 
 $md3-purple: (
   100: #ecdcff,
@@ -160,6 +201,7 @@ $md3-purple: (
   800: #3f1a71,
   900: #280056,
 );
+
 $md3-green: (
   100: #aff49e,
   200: #94d785,
@@ -171,6 +213,7 @@ $md3-green: (
   800: #003a02,
   900: #002201,
 );
+
 $md3-yellow: (
   100: #ebe86e,
   200: #cfcb55,
@@ -182,9 +225,23 @@ $md3-yellow: (
   800: #333200,
   900: #1d1d00,
 );
+
+$md3-grey: (
+  100: #e8e0eb,
+  200: #cbc4cf,
+  300: #b0a9b3,
+  400: #958e99,
+  500: #7b757f,
+  600: #625c66,
+  700: #4a454e,
+  800: #332f37,
+  900: #1e1a22,
+);
+
 @include get-palette-classes('md3-purple', $md3-purple);
 @include get-palette-classes('md3-green', $md3-green);
 @include get-palette-classes('md3-yellow', $md3-yellow);
+@include get-palette-classes('md3-grey', $md3-grey);
 
 // $cocoondata-purple: #2e0161;
 // $cocoondata-green: #caffba;
